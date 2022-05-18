@@ -16,10 +16,22 @@ public class Repo {
         points = new MutableLiveData<>();
 
         Player d = new Player();
-        d.setNavn("Bente");
+        d.setNavn("Andreas");
+
+        Player d2 = new Player();
+        d.setNavn("Kasper");
+
+        Player d4 = new Player();
+        d.setNavn("Kristian");
+
+        Player d5 = new Player();
+        d.setNavn("Bo");
 
         ArrayList<Player> p = new ArrayList<>();
         p.add(d);
+        p.add(d2);
+        p.add(d4);
+        p.add(d5);
 
         players.postValue(p);
     }
