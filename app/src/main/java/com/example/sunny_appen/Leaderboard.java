@@ -5,5 +5,5 @@ import java.util.ArrayList;
 public class Leaderboard {
     private ArrayList<Point> listePoint;
 
-    
+
 }
