@@ -19,19 +19,31 @@ public class Repo {
         d.setNavn("Andreas");
 
         Player d2 = new Player();
-        d.setNavn("Kasper");
+        d2.setNavn("Kasper");
 
         Player d4 = new Player();
-        d.setNavn("Kristian");
+        d4.setNavn("Kristian");
 
         Player d5 = new Player();
-        d.setNavn("Bo");
+        d5.setNavn("Bo");
+
+        Player d6 = new Player();
+        d6.setNavn("Marcus");
+
+        Player d7 = new Player();
+        d7.setNavn("Chen");
+
+        Player d8 = new Player();
+        d8.setNavn("Jones");
 
         ArrayList<Player> p = new ArrayList<>();
         p.add(d);
         p.add(d2);
         p.add(d4);
         p.add(d5);
+        p.add(d6);
+        p.add(d7);
+        p.add(d8);
 
         players.postValue(p);
     }
