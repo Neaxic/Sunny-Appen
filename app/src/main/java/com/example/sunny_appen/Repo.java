@@ -10,28 +10,42 @@ public class Repo {
     private static Repo instance;
     private MutableLiveData<ArrayList<Player>> players;
     private MutableLiveData<ArrayList<Point>> points;
+    private MutableLiveData<Player> selectedPlayer;
 
     private Repo(){
         players = new MutableLiveData<>();
         points = new MutableLiveData<>();
+        selectedPlayer = new MutableLiveData<>();
 
         Player d = new Player();
         d.setNavn("Andreas");
 
         Player d2 = new Player();
-        d.setNavn("Kasper");
+        d2.setNavn("Kasper");
 
         Player d4 = new Player();
-        d.setNavn("Kristian");
+        d4.setNavn("Kristian");
 
         Player d5 = new Player();
-        d.setNavn("Bo");
+        d5.setNavn("Bo");
+
+        Player d6 = new Player();
+        d6.setNavn("Marcus");
+
+        Player d7 = new Player();
+        d7.setNavn("Chen");
+
+        Player d8 = new Player();
+        d8.setNavn("Jones");
 
         ArrayList<Player> p = new ArrayList<>();
         p.add(d);
         p.add(d2);
         p.add(d4);
         p.add(d5);
+        p.add(d6);
+        p.add(d7);
+        p.add(d8);
 
         players.postValue(p);
     }
@@ -41,6 +55,14 @@ public class Repo {
             instance = new Repo();
         }
         return instance;
+    }
+
+    public MutableLiveData<Player> getSelectedPlayer() {
+        return selectedPlayer;
+    }
+
+    public void setSelectedPlayer(Player selectedPlayer) {
+        this.selectedPlayer.postValue(selectedPlayer);
     }
 
     public MutableLiveData<ArrayList<Player>> getPlayers() {

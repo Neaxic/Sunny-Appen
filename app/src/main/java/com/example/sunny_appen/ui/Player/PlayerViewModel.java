@@ -1,14 +1,14 @@
-package com.example.sunny_appen.ui.home;
+package com.example.sunny_appen.ui.Player;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class PlayerViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public PlayerViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("VELKOMMEN TIL HELVEDE");
     }

@@ -28,4 +28,10 @@
         android:name="com.example.sunny_appen.ui.leaderboard.Leaderboard"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_leaderboard" />
+
+    <fragment
+        android:id="@+id/nav_player"
+        android:name="com.example.sunny_appen.ui.Player.PlayerFragment"
+        android:label="@string/menu_player"
+        tools:layout="@layout/fragment_player" />
 </navigation>
