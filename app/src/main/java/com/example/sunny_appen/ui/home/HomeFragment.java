@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,12 +18,14 @@ import com.example.sunny_appen.Repo;
 import com.example.sunny_appen.databinding.FragmentHomeBinding;
 import com.example.sunny_appen.recycler.OnClickListener;
 import com.example.sunny_appen.recycler.RecAdapter;
+import com.example.sunny_appen.ui.Player.PlayerFragment;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private Repo repo;
     private RecyclerView playerList;
+    private View root;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,13 +33,13 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        root = binding.getRoot();
         repo = Repo.getInstance();
 
 
         setText();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textHeaderName;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
@@ -52,6 +55,8 @@ public class HomeFragment extends Fragment {
 
             b.setOnClickListner(p -> {
                 System.out.println(p.getNavn());
+                repo.setSelectedPlayer(p);
+                Navigation.findNavController(root).navigate(R.id.nav_player);
             });
         });
 

@@ -60,8 +60,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
             pricing = itemView.findViewById(R.id.tv_pricing);
             icon = itemView.findViewById(R.id.iv_icon);
             itemView.setOnClickListener(v ->{
-//                listener.onClick(players.get(getBindingAdapterPosition()));
-                System.out.println("idk");
+                listener.onClick(players.get(getBindingAdapterPosition()));
             });
         }
     }

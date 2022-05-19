@@ -10,10 +10,12 @@ public class Repo {
     private static Repo instance;
     private MutableLiveData<ArrayList<Player>> players;
     private MutableLiveData<ArrayList<Point>> points;
+    private MutableLiveData<Player> selectedPlayer;
 
     private Repo(){
         players = new MutableLiveData<>();
         points = new MutableLiveData<>();
+        selectedPlayer = new MutableLiveData<>();
 
         Player d = new Player();
         d.setNavn("Andreas");
@@ -53,6 +55,14 @@ public class Repo {
             instance = new Repo();
         }
         return instance;
+    }
+
+    public MutableLiveData<Player> getSelectedPlayer() {
+        return selectedPlayer;
+    }
+
+    public void setSelectedPlayer(Player selectedPlayer) {
+        this.selectedPlayer.postValue(selectedPlayer);
     }
 
     public MutableLiveData<ArrayList<Player>> getPlayers() {
